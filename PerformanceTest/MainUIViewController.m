@@ -7,9 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import "MainUIViewController.h"
-#import "OpenGLUIViewController.h"
-#import "MetalUIViewController.h"
 #import "UIViewController+Additions.h"
+#import "OpenGLES/OpenGLUIViewController.h"
+#import "Metal/MetalUIViewController.h"
+#import "DriveMotion/DriveMotionViewController.h"
+#import "APM/APMViewController.h"
 
 @interface MainUIViewController() <UITableViewDataSource, UITableViewDelegate>
 
@@ -27,11 +29,17 @@
     
     UIButton *glButton = [self createButtonWithTitle:@"OpenGL" frame:CGRectMake(100, 40, buttonWidth, 40)];
     UIButton *mtButton = [self createButtonWithTitle:@"Metal" frame:CGRectMake(100, 90, buttonWidth, 40)];
+    UIButton *dmButton = [self createButtonWithTitle:@"DriveMotion" frame:CGRectMake(100, 140, buttonWidth, 40)];
+    UIButton *apmButton = [self createButtonWithTitle:@"APM" frame:CGRectMake(100, 190, buttonWidth, 40)];
     [glButton addTarget:self action:@selector(toOpenGLPage) forControlEvents:UIControlEventTouchUpInside];
     [mtButton addTarget:self action:@selector(toMetalPage) forControlEvents:UIControlEventTouchUpInside];
+    [dmButton addTarget:self action:@selector(toDriveMotionPage) forControlEvents:UIControlEventTouchUpInside];
+    [apmButton addTarget:self action:@selector(toAPMPage) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:glButton];
     [self.view addSubview:mtButton];
+    [self.view addSubview:dmButton];
+    [self.view addSubview:apmButton];
     
     CGFloat tableWidth = [UIScreen mainScreen].bounds.size.width;
     self.view.backgroundColor = [UIColor whiteColor];
@@ -60,6 +68,18 @@
 {
     MetalUIViewController *vc = [MetalUIViewController new];
     vc.testRecords = self.testRecords;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)toDriveMotionPage
+{
+    DriveMotionViewController *vc = [DriveMotionViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)toAPMPage
+{
+    APMViewController *vc = [APMViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

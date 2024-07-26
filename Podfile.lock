@@ -1,20 +1,61 @@
 PODS:
-  - Alamofire (5.9.1)
-  - SwiftyJSON (5.0.2)
+  - DSJSONSchemaValidation (2.0.7)
+  - HCKalmanFilter (1.2.1):
+    - Surge (~> 2.0.0)
+  - ReachabilitySwift (5.0.0)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
+  - SQLiteMigrationManager.swift (0.7.0):
+    - SQLite.swift (~> 0.12.0)
+  - Surge (2.0.0)
+  - SwiftProtobuf (1.17.0)
+  - TelenavCommonLogging (1.1.5):
+    - Zip (~> 2.1.2)
+  - TelenavDriveMotion (1.5.4):
+    - DSJSONSchemaValidation (~> 2.0.7)
+    - HCKalmanFilter (~> 1.2.1)
+    - ReachabilitySwift (~> 5.0.0)
+    - SQLite.swift (~> 0.12.2)
+    - SQLiteMigrationManager.swift (~> 0.7.0)
+    - SwiftProtobuf (~> 1.17.0)
+    - TelenavDriveMotionAPI (= 1.3.5)
+    - Zip (~> 2.1.2)
+  - TelenavDriveMotionAPI (1.3.5):
+    - TelenavCommonLogging (= 1.1.5)
+  - Zip (2.1.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.4)
-  - SwiftyJSON (~> 5.0)
+  - TelenavDriveMotion (= 1.5.4)
 
 SPEC REPOS:
-  trunk:
-    - Alamofire
-    - SwiftyJSON
+  https://artifactory.telenav.com/artifactory/api/pods/telenav-cocoapods-releases:
+    - TelenavCommonLogging
+    - TelenavDriveMotion
+    - TelenavDriveMotionAPI
+  https://github.com/CocoaPods/Specs.git:
+    - DSJSONSchemaValidation
+    - HCKalmanFilter
+    - ReachabilitySwift
+    - SQLite.swift
+    - SQLiteMigrationManager.swift
+    - Surge
+    - SwiftProtobuf
+    - Zip
 
 SPEC CHECKSUMS:
-  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
-  SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
+  DSJSONSchemaValidation: 46e30ccfa9908c49d184f453d556f55aa0aac1ff
+  HCKalmanFilter: e44b0885101e68f5e1ffefa29efab12c65c301d6
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  SQLiteMigrationManager.swift: 2dd6f760d6e53f666176346436c689e55a608f7a
+  Surge: 1f0286bc5f0fe4283f3455479895bf85c7ef7760
+  SwiftProtobuf: 9c85136c6ba74b0a1b84279dbf0f6db8efb714e0
+  TelenavCommonLogging: 7b57b9c2023f19a9da1a0ca062b4675c4c63b4fd
+  TelenavDriveMotion: f669c44dbecec0a43fa769ee63e5e3d6af78fbd5
+  TelenavDriveMotionAPI: d5b0d9ae4440fa34f3681a9af938e27c6b2c94e8
+  Zip: b3fef584b147b6e582b2256a9815c897d60ddc67
 
-PODFILE CHECKSUM: 2e50c68a6aad9cbda68a1519fa543dd72b2c37a7
+PODFILE CHECKSUM: 4673e53ab6399453fdcab3180d2522d3830bd677
 
 COCOAPODS: 1.15.2

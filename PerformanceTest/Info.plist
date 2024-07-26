@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DM_API_KEY</key>
+	<string>$(STAGE_API_KEY)</string>
+	<key>DM_API_SECRET</key>
+	<string>$(STAGE_API_SECRET)</string>
+	<key>DM_DEVICE_ID</key>
+	<string>$(DEVICE_GUID)</string>
+	<key>DM_END_POINT</key>
+	<string>$(STAGE_END_POINT)</string>
+	<key>DM_USER_ID</key>
+	<string>$(USER_ID)</string>
+</dict>
+</plist>

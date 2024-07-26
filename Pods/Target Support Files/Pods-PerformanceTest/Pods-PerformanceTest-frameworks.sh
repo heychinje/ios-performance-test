@@ -176,12 +176,30 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DSJSONSchemaValidation/DSJSONSchemaValidation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/HCKalmanFilter/HCKalmanFilter.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SQLiteMigrationManager.swift/SQLiteMigrationManager.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Surge/Surge.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Zip/Zip.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TelenavCommonLogging/TelenavCommonLogging.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TelenavDriveMotion/TelenavDriveMotion.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TelenavDriveMotionAPI/TelenavDriveMotionAPI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DSJSONSchemaValidation/DSJSONSchemaValidation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/HCKalmanFilter/HCKalmanFilter.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SQLiteMigrationManager.swift/SQLiteMigrationManager.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Surge/Surge.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Zip/Zip.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TelenavCommonLogging/TelenavCommonLogging.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TelenavDriveMotion/TelenavDriveMotion.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TelenavDriveMotionAPI/TelenavDriveMotionAPI.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

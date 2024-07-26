@@ -1,0 +1,29 @@
+# Xcode
+DerivedData/
+build/
+*.xcworkspace
+xcuserdata/
+
+# CocoaPods
+Pods/
+
+# Swift Package Manager
+.build/
+Package.resolved
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+
+# Ignore xcconfig files (if they contain sensitive information)
+*.xcconfig
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp

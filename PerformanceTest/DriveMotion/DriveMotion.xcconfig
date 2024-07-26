@@ -1,0 +1,16 @@
+//
+//  DriveMotion.xcconfig
+//  PerformanceTest
+//
+//  Created by Zheng, Haiqiang (Jason) on 2024/7/26.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_KEY = your_secret_api_key
+
+
+
+USER_ID = test_user_id_0000-0000
+DEVICE_GUID = test_device_guid_0000-0000
