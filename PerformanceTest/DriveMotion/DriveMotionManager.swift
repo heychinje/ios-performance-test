@@ -75,6 +75,9 @@ import TelenavDriveMotionAPI
             } catch {
                 NSLog("DriveMotionManager: failed to start drive. error: \(error)")
             }
+
+            // it is must, due to internal logic in DM, otherwise a crash will occurre.
+            Thread.sleep(forTimeInterval: 0.1)
             deinitialize()
         }
     }

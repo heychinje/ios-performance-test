@@ -12,5 +12,9 @@
 	<string>$(STAGE_END_POINT)</string>
 	<key>DM_USER_ID</key>
 	<string>$(USER_ID)</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 </dict>
 </plist>
