@@ -8,8 +8,7 @@
 #import "APMViewController.h"
 #import "UIViewController+Additions.h"
 #import "PerformanceTest-Swift.h"
-#import <mach/mach.h>
-#import <assert.h>
+#import "CPU/CpuDumper.h"
 
 
 @interface APMViewController ()
@@ -32,7 +31,7 @@
 
 - (void)cpu
 {
-    
+    [CpuDumper cpuUsage];
 }
 
 

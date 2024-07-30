@@ -12,6 +12,8 @@
 		390E2CA52C5373D200E500E9 /* DriveMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390E2CA42C5373D200E500E9 /* DriveMotionManager.swift */; };
 		390E2CA72C537B5D00E500E9 /* DriveMotionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390E2CA62C537B5D00E500E9 /* DriveMotionDelegate.swift */; };
 		390E2CAE2C53E81100E500E9 /* APMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390E2CAD2C53E81100E500E9 /* APMViewController.m */; };
+		390E2CC02C55311100E500E9 /* CpuDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = 390E2CBF2C55311100E500E9 /* CpuDumper.m */; };
+		390E2CE72C57828A00E500E9 /* MemoryDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = 390E2CE62C57828A00E500E9 /* MemoryDumper.m */; };
 		394344C52C38E11F002F1977 /* GLESMath.c in Sources */ = {isa = PBXBuildFile; fileRef = 394344BE2C38E11F002F1977 /* GLESMath.c */; };
 		394344C62C38E11F002F1977 /* GLESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 394344C12C38E11F002F1977 /* GLESUtils.m */; };
 		394344D22C38E1B0002F1977 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 394344CC2C38E1B0002F1977 /* shaders.metal */; };
@@ -38,6 +40,10 @@
 		390E2CAD2C53E81100E500E9 /* APMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMViewController.m; sourceTree = "<group>"; };
 		390E2CB32C53F2E200E500E9 /* DriveMotion.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DriveMotion.xcconfig; sourceTree = "<group>"; };
 		390E2CB42C53FB0800E500E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		390E2CBE2C55311100E500E9 /* CpuDumper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CpuDumper.h; sourceTree = "<group>"; };
+		390E2CBF2C55311100E500E9 /* CpuDumper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CpuDumper.m; sourceTree = "<group>"; };
+		390E2CE52C57828A00E500E9 /* MemoryDumper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryDumper.h; sourceTree = "<group>"; };
+		390E2CE62C57828A00E500E9 /* MemoryDumper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryDumper.m; sourceTree = "<group>"; };
 		394344BE2C38E11F002F1977 /* GLESMath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GLESMath.c; sourceTree = "<group>"; };
 		394344BF2C38E11F002F1977 /* GLESMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESMath.h; sourceTree = "<group>"; };
 		394344C02C38E11F002F1977 /* GLESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESUtils.h; sourceTree = "<group>"; };
@@ -103,10 +109,30 @@
 		390E2CAB2C53E81100E500E9 /* APM */ = {
 			isa = PBXGroup;
 			children = (
+				390E2CE42C5781C700E500E9 /* MEMORY */,
+				390E2CBD2C5530EF00E500E9 /* CPU */,
 				390E2CAC2C53E81100E500E9 /* APMViewController.h */,
 				390E2CAD2C53E81100E500E9 /* APMViewController.m */,
 			);
 			path = APM;
+			sourceTree = "<group>";
+		};
+		390E2CBD2C5530EF00E500E9 /* CPU */ = {
+			isa = PBXGroup;
+			children = (
+				390E2CBE2C55311100E500E9 /* CpuDumper.h */,
+				390E2CBF2C55311100E500E9 /* CpuDumper.m */,
+			);
+			path = CPU;
+			sourceTree = "<group>";
+		};
+		390E2CE42C5781C700E500E9 /* MEMORY */ = {
+			isa = PBXGroup;
+			children = (
+				390E2CE52C57828A00E500E9 /* MemoryDumper.h */,
+				390E2CE62C57828A00E500E9 /* MemoryDumper.m */,
+			);
+			path = MEMORY;
 			sourceTree = "<group>";
 		};
 		394344C42C38E11F002F1977 /* Utils */ = {
@@ -322,6 +348,7 @@
 				394344DB2C3AD683002F1977 /* OpenGL_1_VC.m in Sources */,
 				390E2CA32C53717500E500E9 /* DriveMotionViewController.m in Sources */,
 				394344C52C38E11F002F1977 /* GLESMath.c in Sources */,
+				390E2CC02C55311100E500E9 /* CpuDumper.m in Sources */,
 				390E2CAE2C53E81100E500E9 /* APMViewController.m in Sources */,
 				394344C62C38E11F002F1977 /* GLESUtils.m in Sources */,
 				39A2A4812C36348800525A4E /* MetalUIViewController.m in Sources */,
@@ -333,6 +360,7 @@
 				394344D22C38E1B0002F1977 /* shaders.metal in Sources */,
 				39A2A4622C35600F00525A4E /* ContentView.swift in Sources */,
 				39A2A4602C35600F00525A4E /* PerformanceTestApp.swift in Sources */,
+				390E2CE72C57828A00E500E9 /* MemoryDumper.m in Sources */,
 				39A2A47E2C36346B00525A4E /* OpenGLUIViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
