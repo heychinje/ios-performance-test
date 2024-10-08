@@ -32,6 +32,14 @@
 - (void)cpu
 {
     [CpuDumper cpuUsage];
+    [self battery];
+}
+
+- (void)battery
+{
+    UIDevice *device = [UIDevice currentDevice];
+    device.batteryMonitoringEnabled = YES;
+    NSLog(@"state: %ld, level: %f", (long)device.batteryState, device.batteryLevel);
 }
 
 

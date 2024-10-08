@@ -10,76 +10,144 @@ import TelenavDriveMotion
 import TelenavDriveMotionAPI
 
 @objcMembers class DriveMotionManager: NSObject {
-    private var mode = TNDriveDetectionMode.auto
+    private var mode: TNDriveDetectionMode? = nil
+    private var isStarted = false
     
-    func getCurrentMode() -> TNDriveDetectionMode {
+    func getCurrentMode() -> TNDriveDetectionMode? {
         return mode
     }
     
-    func getModeString() -> String {
-        return mode.toText()
+    func getModeString() -> String? {
+        return mode?.toText()
     }
     
-    func modeToggle() {
-        if (!isInitialized()) {
-            var newMode = mode
-            if (mode == TNDriveDetectionMode.auto) {
-                newMode = TNDriveDetectionMode.manual
-            } else {
-                newMode = TNDriveDetectionMode.auto
-            }
-            NSLog("DriveMotionManager: change mode: \(mode) -> \(newMode)")
-            mode = newMode
-        }
-    }
-    
-    func startAutoMode() {
-        if (!isInitialized()) {
-            initialize { err in
-                if (err == nil) {
-                    NSLog("DriveMotionManager: DriveMotion is started in Auto Mode")
-                }
-            }
-        }
-    }
-    
-    func stopAutoMode() {
+    func modeToggle(onCompleteion: @escaping (_ errMsg: String?, _ result: Bool) -> Void) {
         if (isInitialized()) {
-            deinitialize()
-            NSLog("DriveMotionManager: DriveMotion is stopped in Auto Mode")
+            onCompleteion("DriveMotionManager: cannot change mode in initialized state.", false)
+            return
         }
+        let oldMode = mode
+        let newMode = mode == TNDriveDetectionMode.auto ? TNDriveDetectionMode.manual : TNDriveDetectionMode.auto
+        mode = newMode
+        onCompleteion("change mode: \(oldMode?.toText() ?? "nl") -> \(newMode.toText())", true)
     }
     
-    func startManuelMode() {
+    func start(onCompleteion: @escaping (_ errMsg: String?, _ result: Bool) -> Void) {
+        guard let mode = mode else {
+            onCompleteion("the mode is not set yet!", false)
+            return
+        }
+        if (isStarted) {
+            onCompleteion("DM has already started.", false)
+            return
+        }
         if (!isInitialized()) {
-            initialize { err in
-                if (err == nil) {
+            initialize(mode: mode) { [weak self] errMsg, result in
+                if (!result) {
+                    onCompleteion(errMsg, result)
+                    return
+                }
+                
+                if (mode == .auto) {
+                    self?.isStarted = true
+                    onCompleteion("DM initialized with [\(mode.toText())] mode successfully and in testing...", true)
+                } else if (mode == .manual) {
+                    onCompleteion("DM initialized with [\(mode.toText())] mode successfully, is going to start...", false)
                     do {
                         let client = try TNDriveMotionService.getDriveMotionClient()
                         try client.startDrive()
-                        NSLog("DriveMotionManager: DriveMotion is started in Manuel Mode")
+                        self?.isStarted = true
+                        onCompleteion("DM started with [\(mode.toText())] mode successfully and in testing...", true)
                     } catch {
-                        NSLog("DriveMotionManager: failed to start drive. error: \(error)")
+                        onCompleteion("failed to started with [\(mode.toText())] mode. error: \(error)", false)
                     }
+                }
+            }
+        } else {
+            if (!isStarted) {
+                guard mode == .manual else {
+                    onCompleteion("DM cannot start with [\(mode.toText())] mode", false)
+                    return
+                }
+                
+                do {
+                    let client = try TNDriveMotionService.getDriveMotionClient()
+                    try client.startDrive()
+                    isStarted = true
+                    onCompleteion("DM started with [\(mode.toText())] mode successfully and in testing...", true)
+                } catch {
+                    onCompleteion("failed to started with [\(mode.toText())] mode. error: \(error)", false)
                 }
             }
         }
     }
     
-    func stopManuelMode() {
-        if (isInitialized()) {
+    func stop(onCompleteion: @escaping (_ errMsg: String?, _ result: Bool) -> Void) {
+        guard let mode = mode else {
+            onCompleteion("the mode is not set yet!", false)
+            return
+        }
+        
+        if (!isInitialized()) {
+            onCompleteion("the mode is not initialized yet, no need to stop.", false)
+            return
+        }
+        
+        if (!isStarted) {
+            onCompleteion("the mode is not started yet, no need to stop.", false)
+            return
+        }
+        
+        if (mode == .auto) {
+            isStarted = false
+            deinitialize()
+            onCompleteion("DM stopped with [\(mode.toText())] mode successfully.", true)
+        } else if (mode == .manual) {
             do {
                 let client = try TNDriveMotionService.getDriveMotionClient()
                 try client.stopDrive()
-                NSLog("DriveMotionManager: DriveMotion is started in Manuel Mode")
+                isStarted = false
+                deinitialize()
+                onCompleteion("DM stopped with [\(mode.toText())] mode successfully.", true)
             } catch {
-                NSLog("DriveMotionManager: failed to start drive. error: \(error)")
+                onCompleteion("failed to stop with [\(mode.toText())] mode. error: \(error)", false)
             }
-
-            // it is must, due to internal logic in DM, otherwise a crash will occurre.
-            Thread.sleep(forTimeInterval: 0.1)
-            deinitialize()
         }
+    }
+    
+    func initManuel(onCompleteion: @escaping (_ errMsg: String?, _ result: Bool) -> Void) {
+        guard let mode = mode else {
+            onCompleteion("Cannot init manuel due to nil mode.", false)
+            return
+        }
+        
+        if (isInitialized()) {
+            onCompleteion("Cannot init manuel due to already initialized.", false)
+            return
+        }
+        
+        initialize(mode: mode) { errMsg, result in
+            if (!result) {
+                onCompleteion(errMsg, result)
+                return
+            }
+            onCompleteion("DM initialized with [\(mode.toText())] mode successfully", true)
+        }
+    }
+    
+    func deinitManuel(onCompleteion: @escaping (_ errMsg: String?, _ result: Bool) -> Void) {
+        guard let mode = mode else {
+            onCompleteion("the mode is not set yet!", false)
+            return
+        }
+        
+        if (!isInitialized()) {
+            onCompleteion("the mode is not initialized yet, no need to stop.", false)
+            return
+        }
+        
+        deinitialize()
+        onCompleteion("DM deinitialized with [\(mode.toText())] mode successfully", true)
     }
     
     func isInitialized() -> Bool {
@@ -103,14 +171,16 @@ import TelenavDriveMotionAPI
     }
     
     private func buildSettings(mode: TNDriveDetectionMode, delegate: TNDriveMotionDelegate) -> TelenavDriveMotionAPI.TNDriveMotionSettings? {
+        let logSettings = TNLoggerSettings(level: .off, rootPath: "", fileNamePrefix: "")
         return TNDriveMotionSettingsBuilder()
             .isExternalUserIdUsedByForce(true)
             .driveDetectionMode(mode)
+            .loggerSettings(logSettings)
             .delegate(delegate)
             .build()
     }
     
-    private func initialize(onCompleteion: @escaping (_ error: Error?) -> Void) {
+    private func initialize(mode: TNDriveDetectionMode, onCompleteion: @escaping (_ errMsg: String?, _ result: Bool) -> Void) {
         guard let options = buildOptions() else {
             NSLog("DriveMotionManager: failed to build options")
             return
@@ -125,14 +195,15 @@ import TelenavDriveMotionAPI
                 sdkOptions: options,
                 driveMotionSettings: settings
             )
-            onCompleteion(nil)
+            onCompleteion("DM is initialized successfully!!! mode: \(mode)", true)
         } catch {
-            NSLog("DriveMotionManager: failed to initialize Drive Motion Service. error: \(error)")
-            onCompleteion(error)
+            onCompleteion("DriveMotionManager: failed to initialize Drive Motion Service. error: \(error)", false)
         }
     }
     
     private func deinitialize() {
+        // it is must, due to internal logic in DM, otherwise a crash will occurre.
+        Thread.sleep(forTimeInterval: 0.1)
         do {
             try TNDriveMotionService.shutdown()
         } catch {

@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode">
+    <wpt lat="37.354107" lon="-121.955238">
+        <name>Santa Clara</name>
+        <time>2024-07-31T12:00:00Z</time>
+    </wpt>
+    <wpt lat="37.444" lon="-121.825">
+        <name>Point 2</name>
+        <time>2024-07-31T12:10:00Z</time>
+    </wpt>
+    <wpt lat="37.534" lon="-121.695">
+        <name>Point 3</name>
+        <time>2024-07-31T12:20:00Z</time>
+    </wpt>
+    <wpt lat="37.624" lon="-121.565">
+        <name>Point 4</name>
+        <time>2024-07-31T12:30:00Z</time>
+    </wpt>
+    <wpt lat="37.714" lon="-121.435">
+        <name>Point 5</name>
+        <time>2024-07-31T12:40:00Z</time>
+    </wpt>
+    <wpt lat="37.804" lon="-121.305">
+        <name>Point 6</name>
+        <time>2024-07-31T12:50:00Z</time>
+    </wpt>
+    <wpt lat="37.894" lon="-121.175">
+        <name>Point 7</name>
+        <time>2024-07-31T13:00:00Z</time>
+    </wpt>
+    <wpt lat="37.984" lon="-121.045">
+        <name>Point 8</name>
+        <time>2024-07-31T13:10:00Z</time>
+    </wpt>
+    <wpt lat="38.074" lon="-120.915">
+        <name>Point 9</name>
+        <time>2024-07-31T13:20:00Z</time>
+    </wpt>
+    <wpt lat="38.164" lon="-120.785">
+        <name>Point 10</name>
+        <time>2024-07-31T13:30:00Z</time>
+    </wpt>
+    <wpt lat="38.254" lon="-120.655">
+        <name>Point 11</name>
+        <time>2024-07-31T13:40:00Z</time>
+    </wpt>
+    <wpt lat="38.344" lon="-120.525">
+        <name>Point 12</name>
+        <time>2024-07-31T13:50:00Z</time>
+    </wpt>
+    <wpt lat="38.434" lon="-120.395">
+        <name>Point 13</name>
+        <time>2024-07-31T14:00:00Z</time>
+    </wpt>
+    <wpt lat="38.524" lon="-120.265">
+        <name>Point 14</name>
+        <time>2024-07-31T14:10:00Z</time>
+    </wpt>
+    <wpt lat="38.614" lon="-120.135">
+        <name>Point 15</name>
+        <time>2024-07-31T14:20:00Z</time>
+    </wpt>
+    <wpt lat="38.704" lon="-120.005">
+        <name>Point 16</name>
+        <time>2024-07-31T14:30:00Z</time>
+    </wpt>
+    <wpt lat="38.794" lon="-119.875">
+        <name>Point 17</name>
+        <time>2024-07-31T14:40:00Z</time>
+    </wpt>
+    <wpt lat="38.884" lon="-119.745">
+        <name>Point 18</name>
+        <time>2024-07-31T14:50:00Z</time>
+    </wpt>
+    <wpt lat="38.974" lon="-119.615">
+        <name>Point 19</name>
+        <time>2024-07-31T15:00:00Z</time>
+    </wpt>
+    <wpt lat="39.064" lon="-119.485">
+        <name>Point 20</name>
+        <time>2024-07-31T15:10:00Z</time>
+    </wpt>
+    <wpt lat="39.154" lon="-119.355">
+        <name>Point 21</name>
+        <time>2024-07-31T15:20:00Z</time>
+    </wpt>
+    <wpt lat="39.244" lon="-119.225">
+        <name>Point 22</name>
+        <time>2024-07-31T15:30:00Z</time>
+    </wpt>
+    <wpt lat="39.334" lon="-119.095">
+        <name>Point 23</name>
+        <time>2024-07-31T15:40:00Z</time>
+    </wpt>
+    <wpt lat="39.424" lon="-118.965">
+        <name>Point 24</name>
+        <time>2024-07-31T15:50:00Z</time>
+    </wpt>
+    <wpt lat="39.514" lon="-118.835">
+        <name>Point 25</name>
+        <time>2024-07-31T16:00:00Z</time>
+    </wpt>
+    <wpt lat="39.604" lon="-118.705">
+        <name>Point 26</name>
+        <time>2024-07-31T16:10:00Z</time>
+    </wpt>
+    <wpt lat="39.694" lon="-118.575">
+        <name>Point 27</name>
+        <time>2024-07-31T16:20:00Z</time>
+    </wpt>
+    <wpt lat="39.784" lon="-118.445">
+        <name>Point 28</name>
+        <time>2024-07-31T16:30:00Z</time>
+    </wpt>
+    <wpt lat="39.874" lon="-118.315">
+        <name>Point 29</name>
+        <time>2024-07-31T16:40:00Z</time>
+    </wpt>
+    <wpt lat="39.964" lon="-118.185">
+        <name>Point 30</name>
+        <time>2024-07-31T16:50:00Z</time>
+    </wpt>
+    <wpt lat="40.054" lon="-118.055">
+        <name>Point 31</name>
+        <time>2024-07-31T17:00:00Z</time>
+    </wpt>
+    <wpt lat="40.144" lon="-117.925">
+        <name>Point 32</name>
+        <time>2024-07-31T17:10:00Z</time>
+    </wpt>
+    <wpt lat="40.234" lon="-117.795">
+        <name>Point 33</name>
+        <time>2024-07-31T17:20:00Z</time>
+    </wpt>
+    <wpt lat="40.324" lon="-117.665">
+        <name>Point 34</name>
+        <time>2024-07-31T17:30:00Z</time>
+    </wpt>
+    <wpt lat="40.414" lon="-117.535">
+        <name>Point 35</name>
+        <time>2024-07-31T17:40:00Z</time>
+    </wpt>
+    <wpt lat="40.504" lon="-117.405">
+        <name>Point 36</name>
+        <time>2024-07-31T17:50:00Z</time>
+    </wpt>
+    <wpt lat="40.594" lon="-117.275">
+        <name>Point 37</name>
+        <time>2024-07-31T18:00:00Z</time>
+    </wpt>
+    <wpt lat="40.684" lon="-117.145">
+        <name>Point 38</name>
+        <time>2024-07-31T18:10:00Z</time>
+    </wpt>
+    <wpt lat="40.774" lon="-117.015">
+        <name>Point 39</name>
+        <time>2024-07-31T18:20:00Z</time>
+    </wpt>
+    <wpt lat="40.864" lon="-116.885">
+        <name>Point 40</name>
+        <time>2024-07-31T18:30:00Z</time>
+    </wpt>
+    <wpt lat="40.954" lon="-116.755">
+        <name>Point 41</name>
+        <time>2024-07-31T18:40:00Z</time>
+    </wpt>
+    <wpt lat="41.044" lon="-116.625">
+        <name>Point 42</name>
+        <time>2024-07-31T18:50:00Z</time>
+    </wpt>
+    <wpt lat="41.134" lon="-116.495">
+        <name>Point 43</name>
+        <time>2024-07-31T19:00:00Z</time>
+    </wpt>
+    <wpt lat="41.224" lon="-116.365">
+        <name>Point 44</name>
+        <time>2024-07-31T19:10:00Z</time>
+    </wpt>
+    <wpt lat="41.314" lon="-116.235">
+        <name>Point 45</name>
+        <time>2024-07-31T19:20:00Z</time>
+    </wpt>
+    <wpt lat="41.404" lon="-116.105">
+        <name>Point 46</name>
+        <time>2024-07-31T19:30:00Z</time>
+    </wpt>
+    <wpt lat="41.494" lon="-115.975">
+        <name>Point 47</name>
+        <time>2024-07-31T19:40:00Z</time>
+    </wpt>
+    <wpt lat="41.584" lon="-115.845">
+        <name>Point 48</name>
+        <time>2024-07-31T19:50:00Z</time>
+    </wpt>
+    <wpt lat="41.674" lon="-115.715">
+        <name>Point 49</name>
+        <time>2024-07-31T20:00:00Z</time>
+    </wpt>
+    <wpt lat="41.764" lon="-115.585">
+        <name>Point 50</name>
+        <time>2024-07-31T20:10:00Z</time>
+    </wpt>
+</gpx>
+

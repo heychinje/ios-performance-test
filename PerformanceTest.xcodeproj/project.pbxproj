@@ -14,6 +14,9 @@
 		390E2CAE2C53E81100E500E9 /* APMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390E2CAD2C53E81100E500E9 /* APMViewController.m */; };
 		390E2CC02C55311100E500E9 /* CpuDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = 390E2CBF2C55311100E500E9 /* CpuDumper.m */; };
 		390E2CE72C57828A00E500E9 /* MemoryDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = 390E2CE62C57828A00E500E9 /* MemoryDumper.m */; };
+		3927DC222CA9216A00EBCBD5 /* GpsUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927DC212CA9216A00EBCBD5 /* GpsUIViewController.swift */; };
+		3927DC2C2CAE839E00EBCBD5 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927DC2B2CAE839E00EBCBD5 /* Matrix.swift */; };
+		3927DC332CB0E17300EBCBD5 /* KalmanFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927DC322CB0E17300EBCBD5 /* KalmanFilter.swift */; };
 		394344C52C38E11F002F1977 /* GLESMath.c in Sources */ = {isa = PBXBuildFile; fileRef = 394344BE2C38E11F002F1977 /* GLESMath.c */; };
 		394344C62C38E11F002F1977 /* GLESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 394344C12C38E11F002F1977 /* GLESUtils.m */; };
 		394344D22C38E1B0002F1977 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 394344CC2C38E1B0002F1977 /* shaders.metal */; };
@@ -44,6 +47,9 @@
 		390E2CBF2C55311100E500E9 /* CpuDumper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CpuDumper.m; sourceTree = "<group>"; };
 		390E2CE52C57828A00E500E9 /* MemoryDumper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryDumper.h; sourceTree = "<group>"; };
 		390E2CE62C57828A00E500E9 /* MemoryDumper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryDumper.m; sourceTree = "<group>"; };
+		3927DC212CA9216A00EBCBD5 /* GpsUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpsUIViewController.swift; sourceTree = "<group>"; };
+		3927DC2B2CAE839E00EBCBD5 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		3927DC322CB0E17300EBCBD5 /* KalmanFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KalmanFilter.swift; sourceTree = "<group>"; };
 		394344BE2C38E11F002F1977 /* GLESMath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GLESMath.c; sourceTree = "<group>"; };
 		394344BF2C38E11F002F1977 /* GLESMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESMath.h; sourceTree = "<group>"; };
 		394344C02C38E11F002F1977 /* GLESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESUtils.h; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 		39A2A4832C36434200525A4E /* UIViewController+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Additions.m"; sourceTree = "<group>"; };
 		39A2A4852C3687F200525A4E /* Vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = Vertex.glsl; sourceTree = "<group>"; };
 		39A2A4872C36882800525A4E /* Fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fragment.glsl; sourceTree = "<group>"; };
+		39AC6BB62C5A39D700BA2815 /* mock_location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mock_location.gpx; sourceTree = "<group>"; };
 		5510C71583CC32ADF6DD3FED /* Pods-PerformanceTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerformanceTest.debug.xcconfig"; path = "Target Support Files/Pods-PerformanceTest/Pods-PerformanceTest.debug.xcconfig"; sourceTree = "<group>"; };
 		C5FE0C96E087F34AF71813AF /* Pods_PerformanceTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerformanceTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,6 +109,7 @@
 				390E2CA42C5373D200E500E9 /* DriveMotionManager.swift */,
 				390E2CA62C537B5D00E500E9 /* DriveMotionDelegate.swift */,
 				390E2CB32C53F2E200E500E9 /* DriveMotion.xcconfig */,
+				39AC6BB62C5A39D700BA2815 /* mock_location.gpx */,
 			);
 			path = DriveMotion;
 			sourceTree = "<group>";
@@ -133,6 +141,16 @@
 				390E2CE62C57828A00E500E9 /* MemoryDumper.m */,
 			);
 			path = MEMORY;
+			sourceTree = "<group>";
+		};
+		3927DC202CA9213000EBCBD5 /* GPS */ = {
+			isa = PBXGroup;
+			children = (
+				3927DC212CA9216A00EBCBD5 /* GpsUIViewController.swift */,
+				3927DC2B2CAE839E00EBCBD5 /* Matrix.swift */,
+				3927DC322CB0E17300EBCBD5 /* KalmanFilter.swift */,
+			);
+			path = GPS;
 			sourceTree = "<group>";
 		};
 		394344C42C38E11F002F1977 /* Utils */ = {
@@ -176,6 +194,7 @@
 		394344D52C3AD1E8002F1977 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				394344D62C3AD1E8002F1977 /* Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -202,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				390E2CB42C53FB0800E500E9 /* Info.plist */,
+				3927DC202CA9213000EBCBD5 /* GPS */,
 				390E2CAB2C53E81100E500E9 /* APM */,
 				390E2C992C53331200E500E9 /* DriveMotion */,
 				394344D42C38F7FE002F1977 /* OpenGLES */,
@@ -214,7 +234,6 @@
 				39A2A4822C36434200525A4E /* UIViewController+Additions.h */,
 				39A2A4832C36434200525A4E /* UIViewController+Additions.m */,
 				39A2A4782C362A8C00525A4E /* PerformanceTest-Bridging-Header.h */,
-				394344D62C3AD1E8002F1977 /* Assets.xcassets */,
 				394344D52C3AD1E8002F1977 /* Preview Content */,
 			);
 			path = PerformanceTest;
@@ -241,6 +260,7 @@
 				39A2A4592C35600F00525A4E /* Frameworks */,
 				39A2A45A2C35600F00525A4E /* Resources */,
 				B477CBE8F88C9D8C71C05D62 /* [CP] Embed Pods Frameworks */,
+				1579D98257979CBA1DC3A184 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,6 +319,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1579D98257979CBA1DC3A184 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PerformanceTest/Pods-PerformanceTest-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PerformanceTest/Pods-PerformanceTest-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PerformanceTest/Pods-PerformanceTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B477CBE8F88C9D8C71C05D62 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,7 +393,10 @@
 				39A2A4772C36281200525A4E /* MainUIViewControllerRepresentable.swift in Sources */,
 				39A2A4752C3562B400525A4E /* MainUIViewController.m in Sources */,
 				39A2A4842C36434200525A4E /* UIViewController+Additions.m in Sources */,
+				3927DC222CA9216A00EBCBD5 /* GpsUIViewController.swift in Sources */,
+				3927DC332CB0E17300EBCBD5 /* KalmanFilter.swift in Sources */,
 				390E2CA72C537B5D00E500E9 /* DriveMotionDelegate.swift in Sources */,
+				3927DC2C2CAE839E00EBCBD5 /* Matrix.swift in Sources */,
 				394344D22C38E1B0002F1977 /* shaders.metal in Sources */,
 				39A2A4622C35600F00525A4E /* ContentView.swift in Sources */,
 				39A2A4602C35600F00525A4E /* PerformanceTestApp.swift in Sources */,

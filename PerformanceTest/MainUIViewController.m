@@ -12,6 +12,7 @@
 #import "Metal/MetalUIViewController.h"
 #import "DriveMotion/DriveMotionViewController.h"
 #import "APM/APMViewController.h"
+#import "PerformanceTest-Swift.h"
 
 @interface MainUIViewController() <UITableViewDataSource, UITableViewDelegate>
 
@@ -31,15 +32,18 @@
     UIButton *mtButton = [self createButtonWithTitle:@"Metal" frame:CGRectMake(100, 90, buttonWidth, 40)];
     UIButton *dmButton = [self createButtonWithTitle:@"DriveMotion" frame:CGRectMake(100, 140, buttonWidth, 40)];
     UIButton *apmButton = [self createButtonWithTitle:@"APM" frame:CGRectMake(100, 190, buttonWidth, 40)];
+    UIButton *gpsButton = [self createButtonWithTitle:@"GPS" frame:CGRectMake(100, 240, buttonWidth, 40)];
     [glButton addTarget:self action:@selector(toOpenGLPage) forControlEvents:UIControlEventTouchUpInside];
     [mtButton addTarget:self action:@selector(toMetalPage) forControlEvents:UIControlEventTouchUpInside];
     [dmButton addTarget:self action:@selector(toDriveMotionPage) forControlEvents:UIControlEventTouchUpInside];
     [apmButton addTarget:self action:@selector(toAPMPage) forControlEvents:UIControlEventTouchUpInside];
+    [gpsButton addTarget:self action:@selector(toGpsPage) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:glButton];
     [self.view addSubview:mtButton];
     [self.view addSubview:dmButton];
     [self.view addSubview:apmButton];
+    [self.view addSubview:gpsButton];
     
     CGFloat tableWidth = [UIScreen mainScreen].bounds.size.width;
     self.view.backgroundColor = [UIColor whiteColor];
@@ -80,6 +84,12 @@
 - (void)toAPMPage
 {
     APMViewController *vc = [APMViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)toGpsPage
+{
+    GpsUIViewController *vc = [GpsUIViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
