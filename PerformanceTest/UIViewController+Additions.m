@@ -93,5 +93,9 @@
     return [dateFormatter stringFromDate:date];
 }
 
+- (void)pushViewController:(Class)viewControllerClass {
+    UIViewController *vc = [viewControllerClass new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end

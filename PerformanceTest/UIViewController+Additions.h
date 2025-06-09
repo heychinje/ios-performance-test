@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
                                 testType:(NSString *)testType;
 
 - (NSString *)formatDate:(NSDate *)date;
+
+- (void)pushViewController:(Class)viewControllerClass;
 @end
 
 NS_ASSUME_NONNULL_END

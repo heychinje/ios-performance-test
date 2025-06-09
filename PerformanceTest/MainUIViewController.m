@@ -33,17 +33,23 @@
     UIButton *dmButton = [self createButtonWithTitle:@"DriveMotion" frame:CGRectMake(100, 140, buttonWidth, 40)];
     UIButton *apmButton = [self createButtonWithTitle:@"APM" frame:CGRectMake(100, 190, buttonWidth, 40)];
     UIButton *gpsButton = [self createButtonWithTitle:@"GPS" frame:CGRectMake(100, 240, buttonWidth, 40)];
+    UIButton *videoButton = [self createButtonWithTitle:@"Video" frame:CGRectMake(100, 290, buttonWidth, 40)];
+    UIButton *phoneCallButton = [self createButtonWithTitle:@"PhoneCall" frame:CGRectMake(100, 340, buttonWidth, 40)];
     [glButton addTarget:self action:@selector(toOpenGLPage) forControlEvents:UIControlEventTouchUpInside];
     [mtButton addTarget:self action:@selector(toMetalPage) forControlEvents:UIControlEventTouchUpInside];
     [dmButton addTarget:self action:@selector(toDriveMotionPage) forControlEvents:UIControlEventTouchUpInside];
     [apmButton addTarget:self action:@selector(toAPMPage) forControlEvents:UIControlEventTouchUpInside];
     [gpsButton addTarget:self action:@selector(toGpsPage) forControlEvents:UIControlEventTouchUpInside];
+    [videoButton addTarget:self action:@selector(toVideoPage) forControlEvents:UIControlEventTouchUpInside];
+    [phoneCallButton addTarget:self action:@selector(toPhoneCallPage) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:glButton];
     [self.view addSubview:mtButton];
     [self.view addSubview:dmButton];
     [self.view addSubview:apmButton];
     [self.view addSubview:gpsButton];
+    [self.view addSubview:videoButton];
+    [self.view addSubview:phoneCallButton];
     
     CGFloat tableWidth = [UIScreen mainScreen].bounds.size.width;
     self.view.backgroundColor = [UIColor whiteColor];
@@ -77,20 +83,27 @@
 
 - (void)toDriveMotionPage
 {
-    DriveMotionViewController *vc = [DriveMotionViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self pushViewController:[DriveMotionViewController class]];
 }
 
 - (void)toAPMPage
 {
-    APMViewController *vc = [APMViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self pushViewController:[APMViewController class]];
 }
 
 - (void)toGpsPage
 {
-    GpsUIViewController *vc = [GpsUIViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self pushViewController:[GpsUIViewController class]];
+}
+
+- (void)toVideoPage
+{
+    [self pushViewController:[AVPlayerUIViewController class]];
+}
+
+- (void)toPhoneCallPage
+{
+    [self pushViewController:[PhoneCallViewController class]];
 }
 
 #pragma mark - UITableViewDataSource
