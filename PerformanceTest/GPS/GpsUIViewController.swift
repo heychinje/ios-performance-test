@@ -23,12 +23,13 @@ class GpsUIViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        log("\(locationManager.location?.toText() ?? "nil")")
         startUpdateLocation()
-        startUpdateAcceleration()
+//        startUpdateAcceleration()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-//        stopUpdateLocation()
+        stopUpdateLocation()
 //        stopUpdateAcceleration()
     }
     
@@ -254,3 +255,8 @@ class GpsUIViewController: UIViewController, CLLocationManagerDelegate {
     }
 }
 
+extension CLLocation {
+    @objc func toText() -> String {
+        return "\(timestamp) \(coordinate.latitude),\(coordinate.longitude) alt=\(altitude), hA=\(horizontalAccuracy), vA=\(verticalAccuracy), speed=\(speed), sA=\(speedAccuracy), course=\(course), cA=\(courseAccuracy)"
+    }
+}

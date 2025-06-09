@@ -205,7 +205,6 @@ struct KalmanFilter {
         X = F * X
 
         // update state covariance matrix
-        let I = Matrix.identity(size: stateCount)
         P = F * P * F.transposed + Q
         
         // update timestamp

@@ -7,6 +7,8 @@ plugin 'cocoapods-art', :sources => [
 ]
 
 source 'https://github.com/CocoaPods/Specs.git'
+source "https://cdn.cocoapods.org/"
+source 'https://github.com/allenscmo/telematics-specs.git'
 platform :ios, '14.0'
 workspace 'PerformanceTest.xcworkspace'
 
@@ -15,7 +17,7 @@ target 'PerformanceTest' do
   use_frameworks!
 
   # Pods for PerformanceTest
-  pod 'TelenavDriveMotion', '2.2.1'
+  pod 'TelenavDriveMotion', '2.21.1'
 end
 
 post_install do |installer|

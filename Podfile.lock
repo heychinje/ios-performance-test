@@ -1,67 +1,82 @@
 PODS:
   - DataCompression (3.8.0)
   - DSJSONSchemaValidation (2.0.7)
-  - HCKalmanFilter (1.2.1):
-    - Surge (~> 2.0.0)
   - ReachabilitySwift (5.0.0)
-  - SQLite.swift (0.12.2):
-    - SQLite.swift/standard (= 0.12.2)
-  - SQLite.swift/standard (0.12.2)
-  - SQLiteMigrationManager.swift (0.7.0):
-    - SQLite.swift (~> 0.12.0)
-  - Surge (2.0.0)
+  - SmartcarAuth (6.0.2)
+  - SQLite.swift (0.15.3.1-tn):
+    - SQLite.swift/standard (= 0.15.3.1-tn)
+  - SQLite.swift/standard (0.15.3.1-tn)
+  - SQLiteMigrationManager.swift (0.8.3-tn):
+    - SQLiteMigrationManager.swift/standard (= 0.8.3-tn)
+  - SQLiteMigrationManager.swift/standard (0.8.3-tn):
+    - SQLite.swift (= 0.15.3.1-tn)
   - SwiftProtobuf (1.17.0)
-  - TelenavCommonLogging (1.2.1):
+  - TelenavCommonLogging (1.3.1):
     - ReachabilitySwift (~> 5.0.0)
-    - SQLite.swift (~> 0.12.2)
+    - SQLite.swift (~> 0.15.3)
     - Zip (~> 2.1.2)
-  - TelenavDriveMotion (2.2.1):
+  - TelenavDriveMotion (2.21.1):
     - DataCompression (~> 3.8.0)
     - DSJSONSchemaValidation (~> 2.0.7)
-    - HCKalmanFilter (~> 1.2.1)
     - ReachabilitySwift (~> 5.0.0)
-    - SQLite.swift (~> 0.12.2)
-    - SQLiteMigrationManager.swift (~> 0.7.0)
+    - SmartcarAuth (= 6.0.2)
+    - SQLite.swift (= 0.15.3.1-tn)
+    - SQLiteMigrationManager.swift (= 0.8.3-tn)
     - SwiftProtobuf (~> 1.17.0)
-    - TelenavDriveMotionAPI (= 2.2.0)
+    - TelenavDriveMotion/Binary (= 2.21.1)
+    - TelenavDriveMotionAPI (= 2.21.0)
+    - TelenavDriveMotionConfig (= 1.0.9)
     - Zip (~> 2.1.2)
-  - TelenavDriveMotionAPI (2.2.0):
-    - TelenavCommonLogging (= 1.2.1)
+  - TelenavDriveMotion/Binary (2.21.1):
+    - DataCompression (~> 3.8.0)
+    - DSJSONSchemaValidation (~> 2.0.7)
+    - ReachabilitySwift (~> 5.0.0)
+    - SmartcarAuth (= 6.0.2)
+    - SQLite.swift (= 0.15.3.1-tn)
+    - SQLiteMigrationManager.swift (= 0.8.3-tn)
+    - SwiftProtobuf (~> 1.17.0)
+    - TelenavDriveMotionAPI (= 2.21.0)
+    - TelenavDriveMotionConfig (= 1.0.9)
+    - Zip (~> 2.1.2)
+  - TelenavDriveMotionAPI (2.21.0):
+    - TelenavCommonLogging (= 1.3.1)
+  - TelenavDriveMotionConfig (1.0.9)
   - Zip (2.1.2)
 
 DEPENDENCIES:
-  - TelenavDriveMotion (= 2.2.1)
+  - TelenavDriveMotion (= 2.21.1)
 
 SPEC REPOS:
   https://artifactory.telenav.com/artifactory/api/pods/telenav-cocoapods-releases:
     - TelenavCommonLogging
     - TelenavDriveMotion
     - TelenavDriveMotionAPI
+    - TelenavDriveMotionConfig
+  https://github.com/allenscmo/telematics-specs.git:
+    - SQLite.swift
+    - SQLiteMigrationManager.swift
   https://github.com/CocoaPods/Specs.git:
     - DataCompression
     - DSJSONSchemaValidation
-    - HCKalmanFilter
     - ReachabilitySwift
-    - SQLite.swift
-    - SQLiteMigrationManager.swift
-    - Surge
+    - SmartcarAuth
     - SwiftProtobuf
     - Zip
 
 SPEC CHECKSUMS:
   DataCompression: 630f9e7db6360b4d8929fb72fbd23689ca43bc16
   DSJSONSchemaValidation: 46e30ccfa9908c49d184f453d556f55aa0aac1ff
-  HCKalmanFilter: e44b0885101e68f5e1ffefa29efab12c65c301d6
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
-  SQLiteMigrationManager.swift: 2dd6f760d6e53f666176346436c689e55a608f7a
-  Surge: 1f0286bc5f0fe4283f3455479895bf85c7ef7760
+  SmartcarAuth: 4c00735620d02b37ab966c8290d1d302580f16e1
+  SQLite.swift: 7219b3fa9793334431cb0dc6fcb8fcd33bdecf65
+  SQLiteMigrationManager.swift: c602635364500836dbdb924a242d22e490756856
   SwiftProtobuf: 9c85136c6ba74b0a1b84279dbf0f6db8efb714e0
-  TelenavCommonLogging: c159b0daf2d812161283218833399c92299b7efa
-  TelenavDriveMotion: 7d5737343a2298ddbc0adc9ef2cbc4da02ca2b6d
-  TelenavDriveMotionAPI: e89603c30d136c7d3618a4a9ac97e38a175cc48c
+  TelenavCommonLogging: e8ebad139c036fcac45a30c70f18e5b6cdab513d
+  TelenavDriveMotion: acbac0016feecb2c8ad525b307748fc9516a5ea7
+  TelenavDriveMotionAPI: 1734716767ced5cfd3d1ed62ceb507e518b329c7
+  TelenavDriveMotionConfig: 151d7c01582eeeab23ddd12f898c8c10cd07919e
   Zip: b3fef584b147b6e582b2256a9815c897d60ddc67
 
-PODFILE CHECKSUM: 98bc2bf6622279f5e61af506112194c792f1d1ab
+PODFILE CHECKSUM: e9f8bf889e0d332289e533a6621c58f8c761b696
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
