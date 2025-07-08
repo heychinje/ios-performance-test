@@ -5,8 +5,7 @@
 //  Created by Zheng, Haiqiang (Jason) on 2025/7/8.
 //
 
-
-
+import UIKit
 
 let testItems: [TestItem] = [
     TestItem(title: "OpenGL", viewControllerClass: OpenGLUIViewController.self, needsTestRecords: true),
@@ -19,13 +18,6 @@ let testItems: [TestItem] = [
     TestItem(title: "DeviceLock", viewControllerClass: DeviceLockViewController.self)
 ]
 
-
-
-
-
-
-
-
 /// Test item configuration
 struct TestItem {
     let title: String
@@ -37,5 +29,4 @@ struct TestItem {
         self.viewControllerClass = viewControllerClass
         self.needsTestRecords = needsTestRecords
     }
-}
-
+} 

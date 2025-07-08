@@ -114,9 +114,9 @@ class BackgroundTaskManager {
     
     private func performBackgroundTask() {
         DispatchQueue.global(qos: .background).async {
-            print("Background task executing...")
+            print("[\(Date())]: Background task executing...")
             Thread.sleep(forTimeInterval: 3.0)
-            print("Background task completed")
+            print("[\(Date())]: Background task completed")
         }
     }
-}
+} 

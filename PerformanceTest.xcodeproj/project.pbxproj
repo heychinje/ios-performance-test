@@ -26,18 +26,18 @@
 		396F13392CD5202B00D34146 /* AVPlayerUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F13382CD5202100D34146 /* AVPlayerUIViewController.swift */; };
 		39A2A4602C35600F00525A4E /* PerformanceTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A45F2C35600F00525A4E /* PerformanceTestApp.swift */; };
 		39A2A4622C35600F00525A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A4612C35600F00525A4E /* ContentView.swift */; };
-		39A2A4772C36281200525A4E /* MainUIViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A4762C36281200525A4E /* MainUIViewControllerRepresentable.swift */; };
 		39A2A47E2C36346B00525A4E /* OpenGLUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A47D2C36346B00525A4E /* OpenGLUIViewController.m */; };
 		39A2A4812C36348800525A4E /* MetalUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A4802C36348800525A4E /* MetalUIViewController.m */; };
 		39A2A4842C36434200525A4E /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A4832C36434200525A4E /* UIViewController+Additions.m */; };
 		39A2A4862C3687F200525A4E /* Vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 39A2A4852C3687F200525A4E /* Vertex.glsl */; };
 		39A2A4882C36882800525A4E /* Fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 39A2A4872C36882800525A4E /* Fragment.glsl */; };
-		39AFE1C12E1D037F00995602 /* MainUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1C02E1D037F00995602 /* MainUIViewController.swift */; };
-		39AFE1C42E1D08C500995602 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1C32E1D08BC00995602 /* BackgroundTaskManager.swift */; };
-		39AFE1C62E1D08EE00995602 /* SilentAudioGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1C52E1D08EC00995602 /* SilentAudioGenerator.swift */; };
-		39AFE1C82E1D091000995602 /* TestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1C72E1D090C00995602 /* TestItem.swift */; };
-		39AFE1CD2E1D0D9200995602 /* DeviceLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1CC2E1D0D9200995602 /* DeviceLockViewController.swift */; };
-		39AFE1D32E1D100D00995602 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39AFE1D12E1D100D00995602 /* Info.plist */; };
+		39AFE1EC2E1D2B7C00995602 /* MainUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1E82E1D2B7C00995602 /* MainUIViewController.swift */; };
+		39AFE1ED2E1D2B7C00995602 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1E62E1D2B7C00995602 /* BackgroundTaskManager.swift */; };
+		39AFE1EE2E1D2B7C00995602 /* MainUIViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1E92E1D2B7C00995602 /* MainUIViewControllerRepresentable.swift */; };
+		39AFE1EF2E1D2B7C00995602 /* SilentAudioGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1EA2E1D2B7C00995602 /* SilentAudioGenerator.swift */; };
+		39AFE1F02E1D2B7C00995602 /* TestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1EB2E1D2B7C00995602 /* TestItem.swift */; };
+		39AFE1F32E1D2C8A00995602 /* DeviceLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1F22E1D2C8A00995602 /* DeviceLockViewController.swift */; };
+		39AFE1F52E1D2D5600995602 /* ScreenStateMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1F42E1D2D5600995602 /* ScreenStateMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,8 @@
 		390E2CA62C537B5D00E500E9 /* DriveMotionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveMotionDelegate.swift; sourceTree = "<group>"; };
 		390E2CAC2C53E81100E500E9 /* APMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMViewController.h; sourceTree = "<group>"; };
 		390E2CAD2C53E81100E500E9 /* APMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMViewController.m; sourceTree = "<group>"; };
-		390E2CB32C53F2E200E500E9 /* DriveMotion.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DriveMotion.xcconfig; sourceTree = "<group>"; };
+		390E2CB32C53F2E200E500E9 /* DriveMotion/DriveMotion.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DriveMotion/DriveMotion.xcconfig; sourceTree = "<group>"; };
+		390E2CB42C53FB0800E500E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		390E2CBE2C55311100E500E9 /* CpuDumper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CpuDumper.h; sourceTree = "<group>"; };
 		390E2CBF2C55311100E500E9 /* CpuDumper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CpuDumper.m; sourceTree = "<group>"; };
 		390E2CE52C57828A00E500E9 /* MemoryDumper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryDumper.h; sourceTree = "<group>"; };
@@ -72,7 +73,7 @@
 		39A2A45C2C35600F00525A4E /* PerformanceTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerformanceTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A2A45F2C35600F00525A4E /* PerformanceTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTestApp.swift; sourceTree = "<group>"; };
 		39A2A4612C35600F00525A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		39A2A4762C36281200525A4E /* MainUIViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		39A2A4782C362A8C00525A4E /* PerformanceTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PerformanceTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		39A2A47C2C36346B00525A4E /* OpenGLUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLUIViewController.h; sourceTree = "<group>"; };
 		39A2A47D2C36346B00525A4E /* OpenGLUIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLUIViewController.m; sourceTree = "<group>"; };
 		39A2A47F2C36348800525A4E /* MetalUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalUIViewController.h; sourceTree = "<group>"; };
@@ -82,13 +83,13 @@
 		39A2A4852C3687F200525A4E /* Vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = Vertex.glsl; sourceTree = "<group>"; };
 		39A2A4872C36882800525A4E /* Fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fragment.glsl; sourceTree = "<group>"; };
 		39AC6BB62C5A39D700BA2815 /* mock_location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mock_location.gpx; sourceTree = "<group>"; };
-		39AFE1C02E1D037F00995602 /* MainUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIViewController.swift; sourceTree = "<group>"; };
-		39AFE1C32E1D08BC00995602 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
-		39AFE1C52E1D08EC00995602 /* SilentAudioGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentAudioGenerator.swift; sourceTree = "<group>"; };
-		39AFE1C72E1D090C00995602 /* TestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestItem.swift; sourceTree = "<group>"; };
-		39AFE1CC2E1D0D9200995602 /* DeviceLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceLockViewController.swift; sourceTree = "<group>"; };
-		39AFE1D12E1D100D00995602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
-		39AFE1D22E1D100D00995602 /* PerformanceTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PerformanceTest-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		39AFE1E62E1D2B7C00995602 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
+		39AFE1E82E1D2B7C00995602 /* MainUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIViewController.swift; sourceTree = "<group>"; };
+		39AFE1E92E1D2B7C00995602 /* MainUIViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		39AFE1EA2E1D2B7C00995602 /* SilentAudioGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentAudioGenerator.swift; sourceTree = "<group>"; };
+		39AFE1EB2E1D2B7C00995602 /* TestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestItem.swift; sourceTree = "<group>"; };
+		39AFE1F22E1D2C8A00995602 /* DeviceLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceLockViewController.swift; sourceTree = "<group>"; };
+		39AFE1F42E1D2D5600995602 /* ScreenStateMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStateMonitor.swift; sourceTree = "<group>"; };
 		5510C71583CC32ADF6DD3FED /* Pods-PerformanceTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerformanceTest.debug.xcconfig"; path = "Target Support Files/Pods-PerformanceTest/Pods-PerformanceTest.debug.xcconfig"; sourceTree = "<group>"; };
 		C5FE0C96E087F34AF71813AF /* Pods_PerformanceTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerformanceTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -120,7 +121,6 @@
 				390E2CA22C53717500E500E9 /* DriveMotionViewController.m */,
 				390E2CA42C5373D200E500E9 /* DriveMotionManager.swift */,
 				390E2CA62C537B5D00E500E9 /* DriveMotionDelegate.swift */,
-				390E2CB32C53F2E200E500E9 /* DriveMotion.xcconfig */,
 				39AC6BB62C5A39D700BA2815 /* mock_location.gpx */,
 			);
 			path = DriveMotion;
@@ -230,10 +230,26 @@
 		39A2A4532C35600F00525A4E = {
 			isa = PBXGroup;
 			children = (
-				39A2A45E2C35600F00525A4E /* PerformanceTest */,
+				39AFE1D92E1D286F00995602 /* App */,
 				39A2A45D2C35600F00525A4E /* Products */,
 				DF61BFF96E591440B89CB4D5 /* Pods */,
 				14BBF7420319C1899A21D210 /* Frameworks */,
+				390E2CB32C53F2E200E500E9 /* DriveMotion/DriveMotion.xcconfig */,
+				394344D42C38F7FE002F1977 /* OpenGLES */,
+				394344D32C38F7C4002F1977 /* Metal */,
+				394344D52C3AD1E8002F1977 /* Preview Content */,
+				3927DC202CA9213000EBCBD5 /* GPS */,
+				390E2C992C53331200E500E9 /* DriveMotion */,
+				39413EAC2DF6C673008C49E7 /* PhoneCall */,
+				39AFE1F42E1D2C8A00995602 /* DeviceLock */,
+				396F13372CD51FFA00D34146 /* Video */,
+				390E2CAB2C53E81100E500E9 /* APM */,
+				39A2A45F2C35600F00525A4E /* PerformanceTestApp.swift */,
+				39A2A4612C35600F00525A4E /* ContentView.swift */,
+				39A2A4822C36434200525A4E /* UIViewController+Additions.h */,
+				39A2A4832C36434200525A4E /* UIViewController+Additions.m */,
+				39A2A4782C362A8C00525A4E /* PerformanceTest-Bridging-Header.h */,
+				390E2CB42C53FB0800E500E9 /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,45 +261,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		39A2A45E2C35600F00525A4E /* PerformanceTest */ = {
+		39AFE1D92E1D286F00995602 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				39AFE1D12E1D100D00995602 /* Info.plist */,
-				39AFE1D22E1D100D00995602 /* PerformanceTest-Bridging-Header.h */,
-				390E2CAB2C53E81100E500E9 /* APM */,
-				39AFE1C22E1D07BB00995602 /* App */,
-				39AFE1CB2E1D0AE900995602 /* DeviceLock */,
-				390E2C992C53331200E500E9 /* DriveMotion */,
-				3927DC202CA9213000EBCBD5 /* GPS */,
-				394344D32C38F7C4002F1977 /* Metal */,
-				394344D42C38F7FE002F1977 /* OpenGLES */,
-				39413EAC2DF6C673008C49E7 /* PhoneCall */,
-				394344D52C3AD1E8002F1977 /* Preview Content */,
-				396F13372CD51FFA00D34146 /* Video */,
-			);
-			path = PerformanceTest;
-			sourceTree = "<group>";
-		};
-		39AFE1C22E1D07BB00995602 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				39AFE1C72E1D090C00995602 /* TestItem.swift */,
-				39AFE1C52E1D08EC00995602 /* SilentAudioGenerator.swift */,
-				39AFE1C32E1D08BC00995602 /* BackgroundTaskManager.swift */,
-				39A2A45F2C35600F00525A4E /* PerformanceTestApp.swift */,
-				39A2A4612C35600F00525A4E /* ContentView.swift */,
-				39A2A4762C36281200525A4E /* MainUIViewControllerRepresentable.swift */,
-				39AFE1C02E1D037F00995602 /* MainUIViewController.swift */,
-				39A2A4822C36434200525A4E /* UIViewController+Additions.h */,
-				39A2A4832C36434200525A4E /* UIViewController+Additions.m */,
+				39AFE1E62E1D2B7C00995602 /* BackgroundTaskManager.swift */,
+				39AFE1E82E1D2B7C00995602 /* MainUIViewController.swift */,
+				39AFE1E92E1D2B7C00995602 /* MainUIViewControllerRepresentable.swift */,
+				39AFE1EA2E1D2B7C00995602 /* SilentAudioGenerator.swift */,
+				39AFE1EB2E1D2B7C00995602 /* TestItem.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
 		};
-		39AFE1CB2E1D0AE900995602 /* DeviceLock */ = {
+		39AFE1F42E1D2C8A00995602 /* DeviceLock */ = {
 			isa = PBXGroup;
 			children = (
-				39AFE1CC2E1D0D9200995602 /* DeviceLockViewController.swift */,
+				39AFE1F22E1D2C8A00995602 /* DeviceLockViewController.swift */,
+				39AFE1F42E1D2D5600995602 /* ScreenStateMonitor.swift */,
 			);
 			path = DeviceLock;
 			sourceTree = "<group>";
@@ -359,7 +353,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39AFE1D32E1D100D00995602 /* Info.plist in Resources */,
 				39A2A4882C36882800525A4E /* Fragment.glsl in Resources */,
 				394344D72C3AD1E8002F1977 /* Assets.xcassets in Resources */,
 				39A2A4862C3687F200525A4E /* Vertex.glsl in Resources */,
@@ -437,19 +430,21 @@
 				394344C52C38E11F002F1977 /* GLESMath.c in Sources */,
 				390E2CC02C55311100E500E9 /* CpuDumper.m in Sources */,
 				390E2CAE2C53E81100E500E9 /* APMViewController.m in Sources */,
-				39AFE1C82E1D091000995602 /* TestItem.swift in Sources */,
 				396F13392CD5202B00D34146 /* AVPlayerUIViewController.swift in Sources */,
 				394344C62C38E11F002F1977 /* GLESUtils.m in Sources */,
 				39A2A4812C36348800525A4E /* MetalUIViewController.m in Sources */,
 				390E2CA52C5373D200E500E9 /* DriveMotionManager.swift in Sources */,
-				39A2A4772C36281200525A4E /* MainUIViewControllerRepresentable.swift in Sources */,
+				39AFE1EC2E1D2B7C00995602 /* MainUIViewController.swift in Sources */,
+				39AFE1ED2E1D2B7C00995602 /* BackgroundTaskManager.swift in Sources */,
+				39AFE1EE2E1D2B7C00995602 /* MainUIViewControllerRepresentable.swift in Sources */,
+				39AFE1EF2E1D2B7C00995602 /* SilentAudioGenerator.swift in Sources */,
+				39AFE1F02E1D2B7C00995602 /* TestItem.swift in Sources */,
+				39AFE1F32E1D2C8A00995602 /* DeviceLockViewController.swift in Sources */,
+				39AFE1F52E1D2D5600995602 /* ScreenStateMonitor.swift in Sources */,
 				39A2A4842C36434200525A4E /* UIViewController+Additions.m in Sources */,
 				3927DC222CA9216A00EBCBD5 /* GpsUIViewController.swift in Sources */,
 				39413EAE2DF6C746008C49E7 /* PhoneCallViewController.swift in Sources */,
-				39AFE1C62E1D08EE00995602 /* SilentAudioGenerator.swift in Sources */,
 				3927DC332CB0E17300EBCBD5 /* KalmanFilter.swift in Sources */,
-				39AFE1C42E1D08C500995602 /* BackgroundTaskManager.swift in Sources */,
-				39AFE1CD2E1D0D9200995602 /* DeviceLockViewController.swift in Sources */,
 				390E2CA72C537B5D00E500E9 /* DriveMotionDelegate.swift in Sources */,
 				3927DC2C2CAE839E00EBCBD5 /* Matrix.swift in Sources */,
 				394344D22C38E1B0002F1977 /* shaders.metal in Sources */,
@@ -457,7 +452,6 @@
 				39A2A4602C35600F00525A4E /* PerformanceTestApp.swift in Sources */,
 				390E2CE72C57828A00E500E9 /* MemoryDumper.m in Sources */,
 				39A2A47E2C36346B00525A4E /* OpenGLUIViewController.m in Sources */,
-				39AFE1C12E1D037F00995602 /* MainUIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,19 +582,19 @@
 		};
 		39A2A46B2C35601200525A4E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 390E2CB32C53F2E200E500E9 /* DriveMotion.xcconfig */;
+			baseConfigurationReference = 390E2CB32C53F2E200E500E9 /* DriveMotion/DriveMotion.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PerformanceTest/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				DEVELOPMENT_TEAM = 2T934NTXP9;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PerformanceTest/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Scout needs your location to set ALWAYS to provide best experience of real-time GPS navigation and discovery nearby.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Scout needs your location to set ALWAYS to provide best experience of real-time GPS navigation and discovery nearby.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Scout needs your location to provide real-time GPS navigation and help you discover what’s nearby.";
@@ -619,7 +613,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.telenav.PerformanceTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "PerformanceTest/PerformanceTest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PerformanceTest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -628,19 +622,19 @@
 		};
 		39A2A46C2C35601200525A4E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 390E2CB32C53F2E200E500E9 /* DriveMotion.xcconfig */;
+			baseConfigurationReference = 390E2CB32C53F2E200E500E9 /* DriveMotion/DriveMotion.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PerformanceTest/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				DEVELOPMENT_TEAM = 2T934NTXP9;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PerformanceTest/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Scout needs your location to set ALWAYS to provide best experience of real-time GPS navigation and discovery nearby.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Scout needs your location to set ALWAYS to provide best experience of real-time GPS navigation and discovery nearby.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Scout needs your location to provide real-time GPS navigation and help you discover what’s nearby.";
@@ -659,7 +653,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.telenav.PerformanceTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "PerformanceTest/PerformanceTest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PerformanceTest-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

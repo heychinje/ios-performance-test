@@ -153,13 +153,13 @@ class PhoneCallViewController: UIViewController {
         if isConnected && callStartTime == nil {
             // Record call start time
             callStartTime = Date()
-            let startTimeStr = formatTimeString(callStartTime!)
+            let startTimeStr = formatTime(callStartTime!)
             startTimeLabel.text = "Start Time: \(startTimeStr)"
             os_log("Call started at %{public}@", log: logger, type: .info, startTimeStr)
         } else if (isEnded || !isConnected) && callStartTime != nil {
             // Record call end time and duration
             let endTime = Date()
-            let endTimeStr = formatTimeString(endTime)
+            let endTimeStr = formatTime(endTime)
             endTimeLabel.text = "End Time: \(endTimeStr)"
             
             if let startTime = callStartTime {
@@ -180,7 +180,7 @@ class PhoneCallViewController: UIViewController {
     /// Formats a date into a time string
     /// - Parameter date: The date to format
     /// - Returns: A formatted time string in HH:mm:ss format
-    private func formatTimeString(_ date: Date) -> String {
+    private func formatTime(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss"
         return formatter.string(from: date)

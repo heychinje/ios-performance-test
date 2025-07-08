@@ -7,6 +7,7 @@
 
 import UIKit
 import os.log
+import LocalAuthentication
 
 /// A view controller that monitors and displays device lock/unlock events
 class DeviceLockViewController: UIViewController {
@@ -19,12 +20,14 @@ class DeviceLockViewController: UIViewController {
     private let unlockTimeLabel = UILabel()
     private let lockCountLabel = UILabel()
     private let unlockCountLabel = UILabel()
+    private let authStatusLabel = UILabel()
+    private let biometricTypeLabel = UILabel()
     private let eventHistoryTextView = UITextView()
     
-    /// Device lock tracking properties
-    private var isDeviceLocked = false
-    private var lockCount = 0
-    private var unlockCount = 0
+    /// Screen state monitor for reusable lock/unlock detection
+    private let screenStateMonitor = ScreenStateMonitor()
+    
+    /// Event history for UI display
     private var eventHistory: [String] = []
     
     /// Logger for tracking device lock events
@@ -43,16 +46,33 @@ class DeviceLockViewController: UIViewController {
         super.viewDidLoad()
         os_log("DeviceLockViewController initialized", log: logger, type: .info)
         setupUI()
-        setupNotifications()
+        setupScreenStateMonitor()
         updateInitialStatus()
     }
     
     deinit {
         os_log("DeviceLockViewController deinitialized", log: logger, type: .info)
-        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Setup Methods
+    
+    /// Sets up the screen state monitor
+    private func setupScreenStateMonitor() {
+        screenStateMonitor.delegate = self
+    }
+    
+    /// Updates the initial status from screen state monitor
+    private func updateInitialStatus() {
+        let state = screenStateMonitor.getCurrentState()
+        let status = state.isLocked ? "Locked" : "Unlocked"
+        statusLabel.text = "Device Status: \(status)"
+        lockCountLabel.text = "Lock Count: \(state.lockCount)"
+        unlockCountLabel.text = "Unlock Count: \(state.unlockCount)"
+        
+        addEventToHistory("Initial status: Device is \(status)")
+        
+        os_log("Initial device status: %{public}@", log: logger, type: .info, status)
+    }
     
     /// Sets up the user interface elements
     private func setupUI() {
@@ -82,6 +102,22 @@ class DeviceLockViewController: UIViewController {
         statusLabel.font = .systemFont(ofSize: 16)
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(statusLabel)
+        
+        // Authentication status label
+        authStatusLabel.text = "Auth Status: Checking..."
+        authStatusLabel.textAlignment = .center
+        authStatusLabel.font = .systemFont(ofSize: 14)
+        authStatusLabel.textColor = .systemBlue
+        authStatusLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(authStatusLabel)
+        
+        // Biometric type label
+        biometricTypeLabel.text = "Biometric Type: Unknown"
+        biometricTypeLabel.textAlignment = .center
+        biometricTypeLabel.font = .systemFont(ofSize: 14)
+        biometricTypeLabel.textColor = .systemPurple
+        biometricTypeLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(biometricTypeLabel)
         
         // Lock time label
         lockTimeLabel.text = "Last Lock Time: -"
@@ -129,6 +165,16 @@ class DeviceLockViewController: UIViewController {
         eventHistoryTextView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(eventHistoryTextView)
         
+        // Refresh auth status button
+        let refreshAuthButton = UIButton(type: .system)
+        refreshAuthButton.setTitle("Refresh Auth Status", for: .normal)
+        refreshAuthButton.backgroundColor = .systemGreen
+        refreshAuthButton.setTitleColor(.white, for: .normal)
+        refreshAuthButton.layer.cornerRadius = 8
+        refreshAuthButton.addTarget(self, action: #selector(refreshAuthStatusTapped), for: .touchUpInside)
+        refreshAuthButton.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(refreshAuthButton)
+        
         // Clear history button
         let clearButton = UIButton(type: .system)
         clearButton.setTitle("Clear History", for: .normal)
@@ -174,8 +220,18 @@ class DeviceLockViewController: UIViewController {
             statusLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.spacing),
             statusLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.spacing),
             
+            // Auth status label constraints
+            authStatusLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 10),
+            authStatusLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.spacing),
+            authStatusLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.spacing),
+            
+            // Biometric type label constraints
+            biometricTypeLabel.topAnchor.constraint(equalTo: authStatusLabel.bottomAnchor, constant: 10),
+            biometricTypeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.spacing),
+            biometricTypeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.spacing),
+            
             // Lock time label constraints
-            lockTimeLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: Constants.spacing),
+            lockTimeLabel.topAnchor.constraint(equalTo: biometricTypeLabel.bottomAnchor, constant: Constants.spacing),
             lockTimeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.spacing),
             lockTimeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.spacing),
             
@@ -205,8 +261,14 @@ class DeviceLockViewController: UIViewController {
             eventHistoryTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.spacing),
             eventHistoryTextView.heightAnchor.constraint(equalToConstant: 200),
             
+            // Refresh auth button constraints
+            refreshAuthButton.topAnchor.constraint(equalTo: eventHistoryTextView.bottomAnchor, constant: Constants.spacing),
+            refreshAuthButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.spacing),
+            refreshAuthButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.spacing),
+            refreshAuthButton.heightAnchor.constraint(equalToConstant: 44),
+            
             // Clear button constraints
-            clearButton.topAnchor.constraint(equalTo: eventHistoryTextView.bottomAnchor, constant: Constants.spacing),
+            clearButton.topAnchor.constraint(equalTo: refreshAuthButton.bottomAnchor, constant: 10),
             clearButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.spacing),
             clearButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.spacing),
             clearButton.heightAnchor.constraint(equalToConstant: 44),
@@ -222,127 +284,12 @@ class DeviceLockViewController: UIViewController {
         os_log("UI setup completed", log: logger, type: .debug)
     }
     
-    /// Sets up notification observers for device lock/unlock events
-    private func setupNotifications() {
-        let notificationCenter = NotificationCenter.default
-        
-        // Listen for device lock notification
-        notificationCenter.addObserver(
-            self,
-            selector: #selector(deviceDidLock),
-            name: UIApplication.protectedDataWillBecomeUnavailableNotification,
-            object: nil
-        )
-        
-        // Listen for device unlock notification
-        notificationCenter.addObserver(
-            self,
-            selector: #selector(deviceDidUnlock),
-            name: UIApplication.protectedDataDidBecomeAvailableNotification,
-            object: nil
-        )
-        
-        // Listen for app entering background (may indicate lock)
-        notificationCenter.addObserver(
-            self,
-            selector: #selector(appDidEnterBackground),
-            name: UIApplication.didEnterBackgroundNotification,
-            object: nil
-        )
-        
-        // Listen for app entering foreground (may indicate unlock)
-        notificationCenter.addObserver(
-            self,
-            selector: #selector(appWillEnterForeground),
-            name: UIApplication.willEnterForegroundNotification,
-            object: nil
-        )
-        
-        os_log("Notification observers set up", log: logger, type: .debug)
-    }
-    
-    /// Updates the initial status based on current device state
-    private func updateInitialStatus() {
-        let isProtectedDataAvailable = UIApplication.shared.isProtectedDataAvailable
-        isDeviceLocked = !isProtectedDataAvailable
-        
-        let status = isDeviceLocked ? "Locked" : "Unlocked"
-        statusLabel.text = "Device Status: \(status)"
-        
-        addEventToHistory("Initial status: Device is \(status)")
-        
-        os_log("Initial device status: %{public}@", log: logger, type: .info, status)
-    }
-    
-    // MARK: - Notification Handlers
-    
-    @objc private func deviceDidLock() {
-        os_log("Device locked (protected data unavailable)", log: logger, type: .info)
-        handleDeviceLock()
-    }
-    
-    @objc private func deviceDidUnlock() {
-        os_log("Device unlocked (protected data available)", log: logger, type: .info)
-        handleDeviceUnlock()
-    }
-    
-    @objc private func appDidEnterBackground() {
-        os_log("App entered background", log: logger, type: .debug)
-        
-        // Check if device is locked when app goes to background
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-            if !UIApplication.shared.isProtectedDataAvailable {
-                self?.handleDeviceLock()
-            }
-        }
-    }
-    
-    @objc private func appWillEnterForeground() {
-        os_log("App will enter foreground", log: logger, type: .debug)
-        
-        // Check if device is unlocked when app comes to foreground
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-            if UIApplication.shared.isProtectedDataAvailable && self?.isDeviceLocked == true {
-                self?.handleDeviceUnlock()
-            }
-        }
-    }
-    
-    // MARK: - Event Handlers
-    
-    private func handleDeviceLock() {
-        guard !isDeviceLocked else { return }
-        
-        isDeviceLocked = true
-        lockCount += 1
-        
-        let currentTime = formatCurrentTime()
-        lockTimeLabel.text = "Last Lock Time: \(currentTime)"
-        lockCountLabel.text = "Lock Count: \(lockCount)"
-        statusLabel.text = "Device Status: Locked"
-        
-        addEventToHistory("🔒 Device locked at \(currentTime)")
-        
-        os_log("Device lock event processed - Count: %d", log: logger, type: .info, lockCount)
-    }
-    
-    private func handleDeviceUnlock() {
-        guard isDeviceLocked else { return }
-        
-        isDeviceLocked = false
-        unlockCount += 1
-        
-        let currentTime = formatCurrentTime()
-        unlockTimeLabel.text = "Last Unlock Time: \(currentTime)"
-        unlockCountLabel.text = "Unlock Count: \(unlockCount)"
-        statusLabel.text = "Device Status: Unlocked"
-        
-        addEventToHistory("🔓 Device unlocked at \(currentTime)")
-        
-        os_log("Device unlock event processed - Count: %d", log: logger, type: .info, unlockCount)
-    }
-    
     // MARK: - Action Methods
+    
+    @objc private func refreshAuthStatusTapped() {
+        os_log("Refresh auth status button tapped", log: logger, type: .info)
+        screenStateMonitor.refreshAuthenticationStatus()
+    }
     
     @objc private func clearHistoryTapped() {
         eventHistory.removeAll()
@@ -384,6 +331,89 @@ class DeviceLockViewController: UIViewController {
                 let bottom = NSMakeRange(textView.text.count - 1, 1)
                 textView.scrollRangeToVisible(bottom)
             }
+        }
+    }
+}
+
+// MARK: - ScreenStateMonitorDelegate
+
+extension DeviceLockViewController: ScreenStateMonitorDelegate {
+    
+    func screenStateMonitor(_ monitor: ScreenStateMonitor, didDetectLock lockTime: Date) {
+        let currentTimeString = formatCurrentTime()
+        let state = monitor.getCurrentState()
+        
+        lockTimeLabel.text = "Last Lock Time: \(currentTimeString)"
+        lockCountLabel.text = "Lock Count: \(state.lockCount)"
+        statusLabel.text = "Device Status: Locked"
+        
+        addEventToHistory("🔒 Device locked at \(currentTimeString)")
+    }
+    
+    func screenStateMonitor(_ monitor: ScreenStateMonitor, didDetectUnlock unlockTime: Date) {
+        let currentTimeString = formatCurrentTime()
+        let state = monitor.getCurrentState()
+        
+        unlockTimeLabel.text = "Last Unlock Time: \(currentTimeString)"
+        unlockCountLabel.text = "Unlock Count: \(state.unlockCount)"
+        statusLabel.text = "Device Status: Unlocked"
+        
+        addEventToHistory("🔓 Device unlocked at \(currentTimeString)")
+    }
+    
+    func screenStateMonitor(_ monitor: ScreenStateMonitor, didUpdateAuthStatus isPasscodeSet: Bool, biometricType: LABiometryType, error: Error?) {
+        // Update auth status label
+        if isPasscodeSet {
+            authStatusLabel.text = "Auth Status: ✅ Passcode/Biometric Set"
+            authStatusLabel.textColor = .systemGreen
+        } else {
+            authStatusLabel.text = "Auth Status: ❌ No Passcode Set"
+            authStatusLabel.textColor = .systemRed
+        }
+        
+        // Update biometric type label
+        var biometricTypeText = "Biometric Type: "
+        
+        switch biometricType {
+        case .none:
+            biometricTypeText += "None Available"
+            biometricTypeLabel.textColor = .systemGray
+        case .touchID:
+            biometricTypeText += "👆 Touch ID"
+            biometricTypeLabel.textColor = .systemBlue
+        case .faceID:
+            biometricTypeText += "👤 Face ID"
+            biometricTypeLabel.textColor = .systemPurple
+        case .opticID:
+            biometricTypeText += "👁️ Optic ID"
+            biometricTypeLabel.textColor = .systemIndigo
+        @unknown default:
+            biometricTypeText += "Unknown Biometric"
+            biometricTypeLabel.textColor = .systemOrange
+        }
+        
+        if let error = error {
+            biometricTypeText += " (\(error.localizedDescription))"
+            biometricTypeLabel.textColor = .systemRed
+        }
+        
+        biometricTypeLabel.text = biometricTypeText
+        
+        // Add to event history
+        let authStatus = isPasscodeSet ? "Passcode/Biometric Set" : "No Passcode Set"
+        addEventToHistory("🔐 Auth Check: \(authStatus)")
+        
+        if let error = error {
+            addEventToHistory("⚠️ Auth Error: \(error.localizedDescription)")
+        }
+    }
+    
+    func screenStateMonitor(_ monitor: ScreenStateMonitor, didChangeBrightness brightness: CGFloat) {
+        let brightnessPercentage = Int(brightness * 100)
+        addEventToHistory("💡 Brightness: \(brightnessPercentage)%")
+        
+        if brightness == 0.0 {
+            addEventToHistory("⚫ Brightness dropped to 0% - may indicate lock")
         }
     }
 } 
