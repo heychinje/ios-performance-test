@@ -26,13 +26,18 @@
 		396F13392CD5202B00D34146 /* AVPlayerUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F13382CD5202100D34146 /* AVPlayerUIViewController.swift */; };
 		39A2A4602C35600F00525A4E /* PerformanceTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A45F2C35600F00525A4E /* PerformanceTestApp.swift */; };
 		39A2A4622C35600F00525A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A4612C35600F00525A4E /* ContentView.swift */; };
-		39A2A4752C3562B400525A4E /* MainUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A4742C3562B400525A4E /* MainUIViewController.m */; };
 		39A2A4772C36281200525A4E /* MainUIViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A4762C36281200525A4E /* MainUIViewControllerRepresentable.swift */; };
 		39A2A47E2C36346B00525A4E /* OpenGLUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A47D2C36346B00525A4E /* OpenGLUIViewController.m */; };
 		39A2A4812C36348800525A4E /* MetalUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A4802C36348800525A4E /* MetalUIViewController.m */; };
 		39A2A4842C36434200525A4E /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A2A4832C36434200525A4E /* UIViewController+Additions.m */; };
 		39A2A4862C3687F200525A4E /* Vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 39A2A4852C3687F200525A4E /* Vertex.glsl */; };
 		39A2A4882C36882800525A4E /* Fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 39A2A4872C36882800525A4E /* Fragment.glsl */; };
+		39AFE1C12E1D037F00995602 /* MainUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1C02E1D037F00995602 /* MainUIViewController.swift */; };
+		39AFE1C42E1D08C500995602 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1C32E1D08BC00995602 /* BackgroundTaskManager.swift */; };
+		39AFE1C62E1D08EE00995602 /* SilentAudioGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1C52E1D08EC00995602 /* SilentAudioGenerator.swift */; };
+		39AFE1C82E1D091000995602 /* TestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1C72E1D090C00995602 /* TestItem.swift */; };
+		39AFE1CD2E1D0D9200995602 /* DeviceLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AFE1CC2E1D0D9200995602 /* DeviceLockViewController.swift */; };
+		39AFE1D32E1D100D00995602 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39AFE1D12E1D100D00995602 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +49,6 @@
 		390E2CAC2C53E81100E500E9 /* APMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMViewController.h; sourceTree = "<group>"; };
 		390E2CAD2C53E81100E500E9 /* APMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMViewController.m; sourceTree = "<group>"; };
 		390E2CB32C53F2E200E500E9 /* DriveMotion.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DriveMotion.xcconfig; sourceTree = "<group>"; };
-		390E2CB42C53FB0800E500E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		390E2CBE2C55311100E500E9 /* CpuDumper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CpuDumper.h; sourceTree = "<group>"; };
 		390E2CBF2C55311100E500E9 /* CpuDumper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CpuDumper.m; sourceTree = "<group>"; };
 		390E2CE52C57828A00E500E9 /* MemoryDumper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryDumper.h; sourceTree = "<group>"; };
@@ -68,10 +72,7 @@
 		39A2A45C2C35600F00525A4E /* PerformanceTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerformanceTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A2A45F2C35600F00525A4E /* PerformanceTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTestApp.swift; sourceTree = "<group>"; };
 		39A2A4612C35600F00525A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		39A2A4732C35629400525A4E /* MainUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainUIViewController.h; sourceTree = "<group>"; };
-		39A2A4742C3562B400525A4E /* MainUIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainUIViewController.m; sourceTree = "<group>"; };
 		39A2A4762C36281200525A4E /* MainUIViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIViewControllerRepresentable.swift; sourceTree = "<group>"; };
-		39A2A4782C362A8C00525A4E /* PerformanceTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PerformanceTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		39A2A47C2C36346B00525A4E /* OpenGLUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLUIViewController.h; sourceTree = "<group>"; };
 		39A2A47D2C36346B00525A4E /* OpenGLUIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLUIViewController.m; sourceTree = "<group>"; };
 		39A2A47F2C36348800525A4E /* MetalUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalUIViewController.h; sourceTree = "<group>"; };
@@ -81,6 +82,13 @@
 		39A2A4852C3687F200525A4E /* Vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = Vertex.glsl; sourceTree = "<group>"; };
 		39A2A4872C36882800525A4E /* Fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fragment.glsl; sourceTree = "<group>"; };
 		39AC6BB62C5A39D700BA2815 /* mock_location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mock_location.gpx; sourceTree = "<group>"; };
+		39AFE1C02E1D037F00995602 /* MainUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIViewController.swift; sourceTree = "<group>"; };
+		39AFE1C32E1D08BC00995602 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
+		39AFE1C52E1D08EC00995602 /* SilentAudioGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentAudioGenerator.swift; sourceTree = "<group>"; };
+		39AFE1C72E1D090C00995602 /* TestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestItem.swift; sourceTree = "<group>"; };
+		39AFE1CC2E1D0D9200995602 /* DeviceLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceLockViewController.swift; sourceTree = "<group>"; };
+		39AFE1D12E1D100D00995602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		39AFE1D22E1D100D00995602 /* PerformanceTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PerformanceTest-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		5510C71583CC32ADF6DD3FED /* Pods-PerformanceTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerformanceTest.debug.xcconfig"; path = "Target Support Files/Pods-PerformanceTest/Pods-PerformanceTest.debug.xcconfig"; sourceTree = "<group>"; };
 		C5FE0C96E087F34AF71813AF /* Pods_PerformanceTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerformanceTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -240,25 +248,44 @@
 		39A2A45E2C35600F00525A4E /* PerformanceTest */ = {
 			isa = PBXGroup;
 			children = (
-				39413EAC2DF6C673008C49E7 /* PhoneCall */,
-				396F13372CD51FFA00D34146 /* Video */,
-				390E2CB42C53FB0800E500E9 /* Info.plist */,
-				3927DC202CA9213000EBCBD5 /* GPS */,
+				39AFE1D12E1D100D00995602 /* Info.plist */,
+				39AFE1D22E1D100D00995602 /* PerformanceTest-Bridging-Header.h */,
 				390E2CAB2C53E81100E500E9 /* APM */,
+				39AFE1C22E1D07BB00995602 /* App */,
+				39AFE1CB2E1D0AE900995602 /* DeviceLock */,
 				390E2C992C53331200E500E9 /* DriveMotion */,
-				394344D42C38F7FE002F1977 /* OpenGLES */,
+				3927DC202CA9213000EBCBD5 /* GPS */,
 				394344D32C38F7C4002F1977 /* Metal */,
+				394344D42C38F7FE002F1977 /* OpenGLES */,
+				39413EAC2DF6C673008C49E7 /* PhoneCall */,
+				394344D52C3AD1E8002F1977 /* Preview Content */,
+				396F13372CD51FFA00D34146 /* Video */,
+			);
+			path = PerformanceTest;
+			sourceTree = "<group>";
+		};
+		39AFE1C22E1D07BB00995602 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				39AFE1C72E1D090C00995602 /* TestItem.swift */,
+				39AFE1C52E1D08EC00995602 /* SilentAudioGenerator.swift */,
+				39AFE1C32E1D08BC00995602 /* BackgroundTaskManager.swift */,
 				39A2A45F2C35600F00525A4E /* PerformanceTestApp.swift */,
 				39A2A4612C35600F00525A4E /* ContentView.swift */,
 				39A2A4762C36281200525A4E /* MainUIViewControllerRepresentable.swift */,
-				39A2A4732C35629400525A4E /* MainUIViewController.h */,
-				39A2A4742C3562B400525A4E /* MainUIViewController.m */,
+				39AFE1C02E1D037F00995602 /* MainUIViewController.swift */,
 				39A2A4822C36434200525A4E /* UIViewController+Additions.h */,
 				39A2A4832C36434200525A4E /* UIViewController+Additions.m */,
-				39A2A4782C362A8C00525A4E /* PerformanceTest-Bridging-Header.h */,
-				394344D52C3AD1E8002F1977 /* Preview Content */,
 			);
-			path = PerformanceTest;
+			path = App;
+			sourceTree = "<group>";
+		};
+		39AFE1CB2E1D0AE900995602 /* DeviceLock */ = {
+			isa = PBXGroup;
+			children = (
+				39AFE1CC2E1D0D9200995602 /* DeviceLockViewController.swift */,
+			);
+			path = DeviceLock;
 			sourceTree = "<group>";
 		};
 		DF61BFF96E591440B89CB4D5 /* Pods */ = {
@@ -332,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39AFE1D32E1D100D00995602 /* Info.plist in Resources */,
 				39A2A4882C36882800525A4E /* Fragment.glsl in Resources */,
 				394344D72C3AD1E8002F1977 /* Assets.xcassets in Resources */,
 				39A2A4862C3687F200525A4E /* Vertex.glsl in Resources */,
@@ -409,16 +437,19 @@
 				394344C52C38E11F002F1977 /* GLESMath.c in Sources */,
 				390E2CC02C55311100E500E9 /* CpuDumper.m in Sources */,
 				390E2CAE2C53E81100E500E9 /* APMViewController.m in Sources */,
+				39AFE1C82E1D091000995602 /* TestItem.swift in Sources */,
 				396F13392CD5202B00D34146 /* AVPlayerUIViewController.swift in Sources */,
 				394344C62C38E11F002F1977 /* GLESUtils.m in Sources */,
 				39A2A4812C36348800525A4E /* MetalUIViewController.m in Sources */,
 				390E2CA52C5373D200E500E9 /* DriveMotionManager.swift in Sources */,
 				39A2A4772C36281200525A4E /* MainUIViewControllerRepresentable.swift in Sources */,
-				39A2A4752C3562B400525A4E /* MainUIViewController.m in Sources */,
 				39A2A4842C36434200525A4E /* UIViewController+Additions.m in Sources */,
 				3927DC222CA9216A00EBCBD5 /* GpsUIViewController.swift in Sources */,
 				39413EAE2DF6C746008C49E7 /* PhoneCallViewController.swift in Sources */,
+				39AFE1C62E1D08EE00995602 /* SilentAudioGenerator.swift in Sources */,
 				3927DC332CB0E17300EBCBD5 /* KalmanFilter.swift in Sources */,
+				39AFE1C42E1D08C500995602 /* BackgroundTaskManager.swift in Sources */,
+				39AFE1CD2E1D0D9200995602 /* DeviceLockViewController.swift in Sources */,
 				390E2CA72C537B5D00E500E9 /* DriveMotionDelegate.swift in Sources */,
 				3927DC2C2CAE839E00EBCBD5 /* Matrix.swift in Sources */,
 				394344D22C38E1B0002F1977 /* shaders.metal in Sources */,
@@ -426,6 +457,7 @@
 				39A2A4602C35600F00525A4E /* PerformanceTestApp.swift in Sources */,
 				390E2CE72C57828A00E500E9 /* MemoryDumper.m in Sources */,
 				39A2A47E2C36346B00525A4E /* OpenGLUIViewController.m in Sources */,
+				39AFE1C12E1D037F00995602 /* MainUIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
